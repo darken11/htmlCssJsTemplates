@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>E-commerce product page</title>
+    <!-- custom style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- minifie for font awsome  library-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- general style for all browsers -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img src="images/logo.svg" alt="logo">
+            <div id="menu" class="menu">
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/icon-close.svg" alt="close" /></a>
+                    </li>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+
+            <div class="avatar">
+
+                <img id="card-pic" src="images/icon-cart.svg" alt="cart" onclick="onShowCard()" />
+                <span id="badge" class="badge"></span>
+
+                <img src="images/image-avatar.png" alt="avatar" onmouseout="onMouseOutCard()" onmouseover="onMouseOverCard()">
+            </div>
+
+            <div id="card" class="card">
+                <h5 class="card-title">Card</h5>
+                <div class="card-body">
+                    <img id="img-card" src="images/image-product-1-thumbnail.jpg" alt="image-cart">
+
+                    <p id="card-text" class="card-text"> <span id="prix"> </span> <span id="number"></span> <strong id="total"></strong></p>
+                    <img id="delete-icon-btn" src="images/icon-delete.svg" alt="image-cart" onclick="onDeleteCard()">
+                </div>
+                <button id="checkout" class="checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="left-side">
+
+                <img src="images/image-product-1.jpg" alt="image1">
+                <img class="previous" src="images/icon-previous.svg" alt="previous">
+                <img class="next" src="images/icon-next.svg" alt="next">
+
+                <ul>
+
+                    <li><img src="images/image-product-1-thumbnail.jpg" alt="image2"></li>
+                    <li><img src="images/image-product-2-thumbnail.jpg" alt="image3"></li>
+                    <li><img src="images/image-product-3-thumbnail.jpg" alt="image3"></li>
+                    <li><img src="images/image-product-4-thumbnail.jpg" alt="image4"></li>
+
+                </ul>
+
+            </div>
+            <div class="right-side">
+                <p>Sneaker company</p>
+                <h2>Fall Limited Edition Sneakers</h2>
+                <p> These low-profile snealers are your perfect casual wear companion. Featuring a durable rubber outer sole. they'll withstand everything the weather can offer.
+                </p>
+                <div class="price">
+                    <p>$125.00</p>
+                </div>
+
+                <span id="minus" class="minus" onclick="myMinusFunction()">
+                    <img src="images/icon-minus.svg"></span>
+                <span id="zero" class="zero">0</span>
+                <span id="plus" class="plus" onclick="myPlusFunction()"><img src="images/icon-plus.svg"></span>
+
+
+                <button id="btn-cart" onclick="addToCard()"><img class="btn-cart" src="images/icon-cart-btn.svg"> Add to card</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
