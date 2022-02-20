@@ -62,7 +62,7 @@ function onShowCard() {
         cardText.innerHTML = "Fail limited Edition Sneakers $" + prix.innerText + " X " + number.innerText + "<strong> $" + total.innerText + "</strong>"
 
     } else {
-        onMouseOverCard();
+        onEmptyCard();
     }
 
 }
@@ -74,7 +74,7 @@ function onDeleteCard() {
     badge.innerText = 0;
 }
 
-function onMouseOverCard() {
+function onEmptyCard() {
     if (zero.innerText == 0) {
         cardBlock.style.display = "block";
         imgCart.style.display = "none";
@@ -86,12 +86,13 @@ function onMouseOverCard() {
     }
 }
 
-function onMouseOutCard() {
+function onDblClik() {
     cardBlock.style.display = "none";
 }
 
 function myFunction() {
     var respo = document.getElementById("myMenu");
+    console.log(respo);
     if (respo.className === "menu") {
         respo.className += " responsive";
     } else {
@@ -99,28 +100,8 @@ function myFunction() {
     }
 }
 
-function goNext() {
-    let tab = [img1, img2, img3, img4];
-    let temp = "";
-    for (let i = 0; i < tab.length; i++) {
-        temp = tab[i];
-    }
-    img0.innerHTML = temp;
-    return img0.innerHTML;
-}
-
-function goPrevious() {}
-
-function bigImag() {
-    var width = "100%";
-    var height = "auto";
-    var transition = "width 0.5s ease";
-    // let tab=[img1,img2,img3,img4];
-    // Function to set image dimensions
 
 
-
-}
 $(document).ready(function() {
     $(".clickable").each(function() {
         $(this).click(function() {
