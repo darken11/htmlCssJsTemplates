@@ -15,14 +15,18 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,400;1,800&display=swap" rel="stylesheet">
+    <!-- link to Jquery Libs -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
     <div class="header">
         <div class="container">
             <img src="images/logo.svg" alt="logo">
-            <div id="menu" class="menu">
+            <div id="myMenu" class="menu">
                 <ul>
                     <li>
                         <a href="#"><img src="images/icon-close.svg" alt="close" /></a>
@@ -40,10 +44,10 @@
 
             <div class="avatar">
 
-                <img id="card-pic" src="images/icon-cart.svg" alt="cart" onclick="onShowCard()" />
+                <img id="card-pic" src="images/icon-cart.svg" alt="cart" ondblclick="onMouseOutCard()" onclick="onShowCard()" />
                 <span id="badge" class="badge"></span>
 
-                <img src="images/image-avatar.png" alt="avatar" onmouseout="onMouseOutCard()" onmouseover="onMouseOverCard()">
+                <img src="images/image-avatar.png" alt="avatar">
             </div>
 
             <div id="card" class="card">
@@ -63,16 +67,16 @@
         <div class="container">
             <div class="left-side">
 
-                <img src="images/image-product-1.jpg" alt="image1">
-                <img class="previous" src="images/icon-previous.svg" alt="previous">
-                <img class="next" src="images/icon-next.svg" alt="next">
+                <img id="largeimg" src="images/image-product-1.jpg" alt="image1" data-nr="1">
+                <img class="previous" src="images/icon-previous.svg" alt="previous" onclick="goPrevious()">
+                <img class="next" src="images/icon-next.svg" alt="next" onclick="goNext()">
 
                 <ul>
 
-                    <li><img src="images/image-product-1-thumbnail.jpg" alt="image2"></li>
-                    <li><img src="images/image-product-2-thumbnail.jpg" alt="image3"></li>
-                    <li><img src="images/image-product-3-thumbnail.jpg" alt="image3"></li>
-                    <li><img src="images/image-product-4-thumbnail.jpg" alt="image4"></li>
+                    <li><img id="imgBg1" class="clickable" src="images/image-product-1.jpg" data-nr="1" alt="image2"></li>
+                    <li><img id="imgBg2" class="clickable" src="images/image-product-2.jpg" data-nr="2" alt="image3"></li>
+                    <li><img id="imgBg3" class="clickable" src="images/image-product-3.jpg" data-nr="3" alt="image3"></li>
+                    <li><img id="imgBg4" class="clickable" src="images/image-product-4.jpg" data-nr="4" alt="image4"></li>
 
                 </ul>
 
@@ -85,11 +89,11 @@
                 <div class="price">
                     <p>$125.00</p>
                 </div>
-
-                <span id="minus" class="minus" onclick="myMinusFunction()">
+                <div class="plusminus">
+                    <span id="minus" class="minus" onclick="myMinusFunction()">
                     <img src="images/icon-minus.svg"></span>
-                <span id="zero" class="zero">0</span>
-                <span id="plus" class="plus" onclick="myPlusFunction()"><img src="images/icon-plus.svg"></span>
+                    <span id="zero" class="zero">0</span>
+                    <span id="plus" class="plus" onclick="myPlusFunction()"><img src="images/icon-plus.svg"></span></div>
 
 
                 <button id="btn-cart" onclick="addToCard()"><img class="btn-cart" src="images/icon-cart-btn.svg"> Add to card</button>

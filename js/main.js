@@ -12,6 +12,11 @@ let btnDeleteIcon = document.getElementById('delete-icon-btn');
 let imgCart = document.getElementById('img-card');
 let checkoutBtn = document.getElementById('checkout');
 let cardText = document.getElementById('card-text');
+let img0 = document.getElementById("imgBg0");
+let img1 = document.getElementById("imgBg1");
+let img2 = document.getElementById("imgBg2");
+let img3 = document.getElementById("imgBg3");
+let img4 = document.getElementById("imgBg4");
 
 
 
@@ -56,6 +61,8 @@ function onShowCard() {
         total.innerText = t;
         cardText.innerHTML = "Fail limited Edition Sneakers $" + prix.innerText + " X " + number.innerText + "<strong> $" + total.innerText + "</strong>"
 
+    } else {
+        onMouseOverCard();
     }
 
 }
@@ -84,10 +91,53 @@ function onMouseOutCard() {
 }
 
 function myFunction() {
-    var respo = document.getElementById("menu");
+    var respo = document.getElementById("myMenu");
     if (respo.className === "menu") {
         respo.className += " responsive";
     } else {
         respo.className = "menu";
     }
+}
+
+function goNext() {
+    let tab = [img1, img2, img3, img4];
+    let temp = "";
+    for (let i = 0; i < tab.length; i++) {
+        temp = tab[i];
+    }
+    img0.innerHTML = temp;
+    return img0.innerHTML;
+}
+
+function goPrevious() {}
+
+function bigImag() {
+    var width = "100%";
+    var height = "auto";
+    var transition = "width 0.5s ease";
+    // let tab=[img1,img2,img3,img4];
+    // Function to set image dimensions
+
+
+
+}
+$(document).ready(function() {
+    $(".clickable").each(function() {
+        $(this).click(function() {
+            $("#largeimg").attr("src", $(this).attr("src")).attr("data-nr", $(this).attr("data-nr"));
+        });
+
+    });
+});
+
+function goNext() {
+    newid = parseInt($("#largeimg").attr("data-nr")) + 1;
+    newsrc = $(".clickable[data-nr=" + newid + "]").attr("src");
+    $("#largeimg").attr("src", newsrc).attr("data-nr", newid);
+}
+
+function goPrevious() {
+    newid = parseInt($("#largeimg").attr("data-nr")) - 1;
+    newsrc = $(".clickable[data-nr=" + newid + "]").attr("src");
+    $("#largeimg").attr("src", newsrc).attr("data-nr", newid);
 }
